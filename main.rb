@@ -30,7 +30,7 @@ def list_items2(app, choices)
   when 8
     puts 'Add music album'
   when 9
-    app.addd_book
+    app.add_book
   end
 end
 
