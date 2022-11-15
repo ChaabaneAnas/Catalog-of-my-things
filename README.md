@@ -1,9 +1,11 @@
+<!-- @format -->
+
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 # Project Name
 
 > Description the project.
-
+> This is a console app that will help you to keep a record of different types of things you own: books, music albums, movies, and games. Everything is based on the UML class diagram.
 
 ## Built With
 
@@ -15,12 +17,10 @@
 
 [Live Demo Link](https://livedemo.com)
 
-
 ## Getting Started
 
 **This is an example of how you may give instructions on setting up your project locally.**
 **Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
 
 To get a local copy up and running follow these simple example steps.
 
@@ -35,8 +35,6 @@ To get a local copy up and running follow these simple example steps.
 ### Run tests
 
 ### Deployment
-
-
 
 ## Authors
 
