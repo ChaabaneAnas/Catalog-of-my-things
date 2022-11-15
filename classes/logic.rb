@@ -14,4 +14,19 @@ class Logic
     file.push({ id: label.id, title: label.title, color: label.color })
     File.write('data/labels.json', file.to_json)
   end
+  def add_book
+    puts 'Publisher: '
+    publisher = gets.chomp
+    puts 'State of the cover (good or bad): '
+    cover_state = gets.chomp
+    puts 'Publish date: '
+    publish_date = gets.chomp
+    book = Book.new(publisher, cover_state, publish_date)
+    add_label(book)
+    puts 'Book and label were added successfully!'
+    file = File.size('./data/books.json').zero? ? [] : JSON.parse(File.read('./data/books.json'))
+    file.push({ id: book.id, publisher: book.publisher, archived: book.archived, cover_state: book.cover_state,
+                publish_date: book.publish_date, label_id: book.label.id })
+    File.write('data/books.json', file.to_json)
+  end
 end
