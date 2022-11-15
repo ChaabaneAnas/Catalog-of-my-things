@@ -14,6 +14,7 @@ class Logic
     file.push({ id: label.id, title: label.title, color: label.color })
     File.write('data/labels.json', file.to_json)
   end
+
   def add_book
     puts 'Publisher: '
     publisher = gets.chomp
