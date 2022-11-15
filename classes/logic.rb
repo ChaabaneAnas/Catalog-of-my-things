@@ -29,4 +29,18 @@ class Logic
                 publish_date: book.publish_date, label_id: book.label.id })
     File.write('data/books.json', file.to_json)
   end
+
+  def list_books
+    books = File.size('./data/books.json').zero? ? [] : JSON.parse(File.read('./data/books.json'))
+    books.each do |e|
+      puts "Publisher: #{e['publisher']}, Cover State: #{e['cover_state']}, Publish Date: #{e['publish_date']}"
+    end
+  end
+
+  def list_labels
+    labels = File.size('./data/labels.json').zero? ? [] : JSON.parse(File.read('./data/labels.json'))
+    labels.each do |e|
+      puts "Title: #{e['title']}, Color: #{e['color']}"
+    end
+  end
 end
