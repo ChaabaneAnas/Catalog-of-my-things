@@ -9,7 +9,7 @@ end
 def list_items1(app, choices)
   case choices
   when 1
-    app.list_all_books
+    app.list_books
   when 2
     puts 'list all music albums'
   when 3
@@ -17,7 +17,7 @@ def list_items1(app, choices)
   when 4
     puts 'list all genres'
   when 5
-    app.list_all_labels
+    app.list_labels
   end
 end
 
@@ -30,7 +30,7 @@ def list_items2(app, choices)
   when 8
     puts 'Add music album'
   when 9
-    app.add_a_book
+    app.addd_book
   end
 end
 
