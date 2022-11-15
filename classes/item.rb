@@ -16,6 +16,6 @@ class Item
   private
 
   def can_be_archived?
-    true if Date.today - Date.parse(@publish_date) > 3650
+    Date.today - Date.parse(@publish_date) > 3650
   end
 end

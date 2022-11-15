@@ -1,12 +1,14 @@
-class Gener 
+class Genre
+  attr_reader :name
+
   def initialize(name)
     @id = Random.rand(1.100)
     @name = name
     @items = []
-  end 
+  end
 
   def add_item(item)
     @items.push(item)
-    item.gener << self  
-  end 
-end 
+    item.genre = self
+  end
+end
