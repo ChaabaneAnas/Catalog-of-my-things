@@ -35,7 +35,7 @@ class Appp
 
   def add_genre(name, album)
     genree = @genres.select { |genre| genre.name == name }
-    genree.empty? ? @genres.push(Genre.new(name).add_item(album)) : genre.first.add_item(album)
+    genree.empty? ? @genres.push(Genre.new(name).add_item(album)) : genree.first.add_item(album)
   end
 
   def list_all_albums
