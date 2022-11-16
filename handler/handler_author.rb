@@ -6,7 +6,8 @@ module HandleAuthor
 
   # GAMES
   def save_author
-    array = []
+    array = File.size('./data/authors.json').zero? ? [] : JSON.parse(File.read('./data/authors.json'))
+
     @authors.each do |author|
       array << {
         author_id: author.id,
@@ -21,11 +22,11 @@ module HandleAuthor
                end
       }
     end
-    write_json(array, './JSONdata/authors.json')
+    File.write('data/authors.json', array.to_json)
   end
 
   def load_author
-    file = File.read('./JSONdata/authors.json')
+    file = File.read('./data/authors.json')
     parse_file = JSON.parse(file)
     parse_file.each do |author|
       person = Author.new(author['first_name'], author['last_name'])
