@@ -40,3 +40,34 @@ class App
       start_app
     end
   end
+
+  def start_app
+    @response = gets.chomp.to_i
+    case @response
+    when 1
+      list_books
+    when 2
+      list_music_albums
+    when 3
+      list_games
+    when 4
+      list_movies
+    when 5
+      list_labels
+    when 6
+      list_genres
+    when 7
+      list_authors
+    when 8
+      list_sources
+    when 9
+      add_book
+    when 10
+      add_music_album
+    when 11
+      add_game
+    when 12
+      add_movie
+    end
+  end
+end

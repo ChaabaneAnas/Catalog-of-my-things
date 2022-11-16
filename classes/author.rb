@@ -15,11 +15,3 @@ class Author
     game.author = self
   end
 end
-
-def games_published
-  @games.select { |game| game.archived == false }
-end
-
-def games_archived
-  @games.select { |game| game.archived == true }
-end
