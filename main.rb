@@ -1,16 +1,18 @@
+require_relative './app'
+
 def main
   puts 'Welcome to Catalog of my things App!'
   puts display_list
 end
 
-def list_items1(choices)
+def list_items1(app, choices)
   case choices
   when 1
     puts 'list all books'
   when 2
     puts 'list all music albums'
   when 3
-    puts 'list all games'
+    app.list_games
   when 4
     puts 'list all genres'
   when 5
@@ -18,12 +20,12 @@ def list_items1(choices)
   end
 end
 
-def list_items2(choices)
+def list_items2(app, choices)
   case choices
   when 6
-    puts 'list all authors'
+    app.list_authors
   when 7
-    puts 'Add game'
+    app.add_game
   when 8
     puts 'Add music album'
   when 9
@@ -45,8 +47,9 @@ def display_list
         '9 - Add a book',
         '0 - Exit']
   choices = gets.chomp.to_i
-  list_items1(choices)
-  list_items2(choices)
+  app = App.new
+  list_items1(app, choices)
+  list_items2(app, choices)
   return puts "\n Thank you for using catagory of everything!" unless choices != 0
 
   return puts 'Please enter a valid input' unless (0...10).include? choices
