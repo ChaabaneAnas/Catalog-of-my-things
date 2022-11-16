@@ -1,14 +1,17 @@
 require_relative './app'
+require_relative './classes/logic'
+
 
 def main
   puts 'Welcome to Catalog of my things App!'
-  puts display_list
+  app = Logic.new
+  puts display_list(app)
 end
 
 def list_items1(app, choices)
   case choices
   when 1
-    puts 'list all books'
+    app.list_books
   when 2
     puts 'list all music albums'
   when 3
@@ -16,7 +19,7 @@ def list_items1(app, choices)
   when 4
     puts 'list all genres'
   when 5
-    puts 'list all labels'
+    app.list_labels
   end
 end
 
@@ -29,11 +32,11 @@ def list_items2(app, choices)
   when 8
     puts 'Add music album'
   when 9
-    puts 'Add book'
+    app.add_book
   end
 end
 
-def display_list
+def display_list(app)
   puts ['',
         "\n Please choose an choices by entering a number from below:",
         '1 - List all books',
@@ -47,7 +50,9 @@ def display_list
         '9 - Add a book',
         '0 - Exit']
   choices = gets.chomp.to_i
+
   app = App.new
+
   list_items1(app, choices)
   list_items2(app, choices)
   return puts "\n Thank you for using catagory of everything!" unless choices != 0
