@@ -8,6 +8,7 @@ class Main
 
   def excute
     puts 'Welcome to Catalog of my things App!'
+    @app.load
     puts display_list
   end
 
@@ -55,6 +56,7 @@ class Main
             '8 - Add a music',
             '9 - Add a book',
             '0 - Exit']
+            
       choices = gets.chomp.to_i
       list_items1(choices)
       list_items2(choices)
