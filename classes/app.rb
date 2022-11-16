@@ -6,8 +6,6 @@ class App
   include DataManager
   def initialize
     @albums = []
-    @games = []
-    @books = []
     @genres = []
   end
 
