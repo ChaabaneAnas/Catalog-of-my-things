@@ -41,10 +41,11 @@ def list_items2(app, app1,app2, choices)
     app.add_book
   when 0 
     app2.presist
+    exit
   end 
 end
 
-def display_list(app, app1,app2)
+def display_list(app, app1, app2)
 
   puts ['',
         "\n Please choose an choices by entering a number from below:",
@@ -61,8 +62,6 @@ def display_list(app, app1,app2)
   choices = gets.chomp.to_i
   list_items1(app, app1,app2, choices)
   list_items2(app, app1,app2, choices)
-
-  app2.quit_app  unless choices != 0
 
   return puts 'Please enter a valid input' unless (0...10).include? choices
 
