@@ -45,6 +45,12 @@ To Run test
 - Twitter: [@IamYunusAli](https://twitter.com/iamyunusali)
 - LinkedIn: [Yunus Ali](https://linkedin.com/in/iamyunusali)
 
+👤 **Choice Osobor**
+
+- GitHub: [@techEmprez](https://github.com/techEmprez)
+- Twitter: [@techEmprez](https://twitter.com/techEmprez)
+- LinkedIn: [Choice Osobor](https://www.linkedin.com/in/choice-osobor/)
+
 
 
 ## 🤝 Contributing
@@ -60,3 +66,4 @@ Give a ⭐️ if you like this project!
 ## 📝 License
 
 This project is [MIT](./LICENSE) licensed.
+1
