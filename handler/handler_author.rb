@@ -1,8 +1,7 @@
-require_relative 'helper_methods'
 require_relative '../modules/game_module'
+require 'json'
 
 module HandleAuthor
-  include HelperFunctions
   include GamesModule
 
   # GAMES
@@ -26,7 +25,8 @@ module HandleAuthor
   end
 
   def load_author
-    parse_file = read_json('./JSONdata/authors.json')
+    file = File.read('./JSONdata/authors.json')
+    parse_file = JSON.parse(file)
     parse_file.each do |author|
       person = Author.new(author['first_name'], author['last_name'])
       @authors << person
