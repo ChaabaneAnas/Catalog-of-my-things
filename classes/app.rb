@@ -1,9 +1,9 @@
 require_relative './genre'
 require_relative './music_album'
-require_relative './dataManagement.rb'
+require_relative './data_management'
 
 class App
-include Data_manager
+  include DataManager
   def initialize
     @albums = []
     @games = []
@@ -30,24 +30,24 @@ include Data_manager
 
     album = MusicAlbum.new(boolean, date)
     @albums.push(album)
-    add_genre(name,album)
+    add_genre(name, album)
 
     puts 'Album  created succsefully'
   end
 
-  def add_genre(name,album)
-    genre = @genres.select {|genre| genre.name === name}
-    genre.empty? ? @genres.push(Genre.new(name).add_item(album)) : genre.first.add_item(album)
+  def add_genre(name, album)
+    genree = @genres.select { |genre| genre.name == name }
+    genree.empty? ? @genres.push(Genre.new(name).add_item(album)) : genre.first.add_item(album)
   end
 
   def list_all_albums
-    puts @albums.map.with_index { |album, index|
+    puts(@albums.map.with_index do |album, index|
            "#{index}) publish date: #{album.publish_date} on spotify?: #{album.on_spotify}"
-         }
+         end)
   end
 
   def list_all_genres
-    puts @genres.map.with_index { |genre, index| "#{index}) name: #{genre.name}" }
+    @genres.map.with_index { |genre, index| puts "#{index}) name: #{genre.name}" }
   end
 
   def quit_app
