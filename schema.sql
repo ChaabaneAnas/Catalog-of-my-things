@@ -10,6 +10,17 @@ CREATE TABLE item (
   FOREIGN KEY (genre_id) REFERENCES genres (id),
 );
 
+CREATE TABLE genre (
+  id serial not null primary key,
+  name text
+  );
+
+  CREATE TABLE musicalbum (
+    id int not null REFERENCES item(id),
+    on_spotify  boolean
+  )
+
+
 CREATE TABLE labels (
   id SERIAL NOT NULL PRIMARY KEY,
   title VARCHAR(100),
