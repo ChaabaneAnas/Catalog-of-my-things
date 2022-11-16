@@ -49,7 +49,7 @@ class Appp
   end
 
   def quit_app
-    self.presist
+    presist
     puts 'thanks for using our app'
     exit
   end
